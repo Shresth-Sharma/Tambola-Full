@@ -8,13 +8,18 @@ var play1,play2=0,play3;
 var t1,t3;
 var t2=[1,2,3,4,5];
 var state;
+var p2;
+function preload(){
+    p2=loadSound("r1.mp3");
+}
 function setup(){
     alert("File has been created by Shresth Sharma and "+"All the copyrights are reserved");
     let person = prompt("Enter 2 for manual and 1 for automatic", "");
     state=person
     if(state==1){
-         //let p1 = prompt("R for color", "");
+    //let p1 = prompt("R for color", "");
     //t1=p1;
+    
     createCanvas(900,570);
     frameRate(2)
     w1=createSprite(325,75,50,50);
@@ -638,7 +643,7 @@ function draw(){
         if(n2<=1){
             n2=25
             temp1();
-           
+            p2.play();
         }
         if(n2>=0&&play2===1){
             n2=n2-1;
@@ -802,6 +807,7 @@ function draw(){
         text(n1,100,300);
         play1.mousePressed(()=>{
             temp1();
+            p2.play();
         });
         
         glow();
